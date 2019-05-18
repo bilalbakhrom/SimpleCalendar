@@ -31,6 +31,7 @@
 		D5556BE2229014930081FF1E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5556BCC229014930081FF1E /* Int+Extension.swift */; };
 		D5556BE3229014930081FF1E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5556BCD229014930081FF1E /* UIView+Extension.swift */; };
 		D5556BE4229014930081FF1E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5556BCE229014930081FF1E /* UIViewController+Extension.swift */; };
+		D5556C6C2290A1050081FF1E /* SimpleCalendar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5556C6B2290A1050081FF1E /* SimpleCalendar.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		D5556BCC229014930081FF1E /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		D5556BCD229014930081FF1E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D5556BCE229014930081FF1E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		D5556C6B2290A1050081FF1E /* SimpleCalendar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SimpleCalendar.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D5556BAB229014420081FF1E /* SimpleCalendarAssets.xcassets */,
+				D5556C6B2290A1050081FF1E /* SimpleCalendar.bundle */,
 				D5556BA3229013CD0081FF1E /* Info.plist */,
 			);
 			path = Resource;
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5556BAF229014420081FF1E /* SimpleCalendarAssets.xcassets in Resources */,
+				D5556C6C2290A1050081FF1E /* SimpleCalendar.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
