@@ -52,7 +52,14 @@ internal class CalendarHeaderView: UIView {
             cancelImageView.image = image.withRenderingMode(.alwaysTemplate)
             cancelImageView.setNeedsDisplay()
         } else {
-            let bundle = Bundle(for: type(of: self))
+            var bundle = Bundle(for: type(of: self))
+            
+            if let resourcePath = bundle.path(forResource: "SimpleCalendar", ofType: "bundle") {
+                if let resourcesBundle = Bundle(path: resourcePath) {
+                    bundle = resourcesBundle
+                }
+            }
+            
             let image = UIImage(named: "cancel", in: bundle, compatibleWith: nil)
             cancelImageView.image = image?.withRenderingMode(.alwaysTemplate)
         }
