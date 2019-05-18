@@ -60,7 +60,7 @@ internal class CalendarHeaderView: UIView {
                 }
             }
             
-            let image = UIImage(named: "cancel", in: bundle, compatibleWith: nil)
+            let image = UIImage(named: "icon", in: bundle, compatibleWith: nil)
             cancelImageView.image = image?.withRenderingMode(.alwaysTemplate)
         }
         
