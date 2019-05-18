@@ -11,6 +11,6 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/bilalBakhrom/SimpleCalendar.git", :tag => "1.0.2" }
   spec.source_files  = "SimpleCalendar/**/*.{h,m,swift,xcdatamodeld}"
-  spec.resource = "Resources/*.png"
+  spec.resources = ['SimpleCalendar/Resource/SimpleCalendarAssets.xcassets/**/*.png']
   spec.swift_version = "5.0"
 end
