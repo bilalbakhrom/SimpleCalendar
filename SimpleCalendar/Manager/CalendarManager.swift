@@ -132,7 +132,7 @@ internal class CalendarManager {
     
     internal func isOutOfDate(_ date: Date?) -> Bool {
         guard let date = date else { fatalError() }
-        let today = initToStartDay(date)
+        let today = initToStartDay(Date())
         let result = calendar.compare(today, to: date, toGranularity: .second)
         return (result == .orderedDescending)
     }

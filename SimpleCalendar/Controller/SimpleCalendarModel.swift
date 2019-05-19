@@ -27,8 +27,10 @@ internal class SimpleCalendarModel {
         dates.forEach { (date) in
             monthContainers.forEach({ (container) in
                 container.components.forEach({ (component) in
-                    if CalendarManager.shared.isSame(firstDate: date, secondDate: component.date) {
-                        component.isSelected = true
+                    if component.date != nil {
+                        if CalendarManager.shared.isSame(firstDate: date, secondDate: component.date) {
+                            component.isSelected = true
+                        }
                     }
                 })
             })
