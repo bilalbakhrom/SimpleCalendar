@@ -22,6 +22,7 @@ internal extension SimpleCalendarUI {
         
         view.backgroundColor = calendarConfig.backgroundColor
         
+        tableView = UITableView()
         tableView.backgroundColor = calendarConfig.backgroundColor
         tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
