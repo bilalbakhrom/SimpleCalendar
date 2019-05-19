@@ -32,6 +32,11 @@
 		D5556BE3229014930081FF1E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5556BCD229014930081FF1E /* UIView+Extension.swift */; };
 		D5556BE4229014930081FF1E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5556BCE229014930081FF1E /* UIViewController+Extension.swift */; };
 		D5556C6C2290A1050081FF1E /* SimpleCalendar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D5556C6B2290A1050081FF1E /* SimpleCalendar.bundle */; };
+		D59BD26E22920EC60012457F /* SimpleCalendarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD26D22920EC60012457F /* SimpleCalendarUI.swift */; };
+		D59BD27022920EE50012457F /* AppUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD26F22920EE50012457F /* AppUIDelegate.swift */; };
+		D59BD2732292151D0012457F /* SimpleCalendar+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */; };
+		D59BD275229215870012457F /* MonthTableCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD274229215870012457F /* MonthTableCellUI.swift */; };
+		D59BD2772292185E0012457F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD2762292185E0012457F /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		D5556BCD229014930081FF1E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D5556BCE229014930081FF1E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D5556C6B2290A1050081FF1E /* SimpleCalendar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SimpleCalendar.bundle; sourceTree = "<group>"; };
+		D59BD26D22920EC60012457F /* SimpleCalendarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalendarUI.swift; sourceTree = "<group>"; };
+		D59BD26F22920EE50012457F /* AppUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIDelegate.swift; sourceTree = "<group>"; };
+		D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimpleCalendar+UITableView.swift"; sourceTree = "<group>"; };
+		D59BD274229215870012457F /* MonthTableCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableCellUI.swift; sourceTree = "<group>"; };
+		D59BD2762292185E0012457F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +104,12 @@
 		D5556BA1229013CD0081FF1E /* SimpleCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				D59BD27122920F2C0012457F /* General */,
 				D5556BBE229014930081FF1E /* Controller */,
 				D5556BB8229014930081FF1E /* Manager */,
 				D5556BB2229014930081FF1E /* MonthCell */,
 				D5556BBA229014930081FF1E /* ComponentCell */,
+				D5556BC5229014930081FF1E /* Configuration */,
 				D5556BC3229014930081FF1E /* Preferences */,
 				D5556BCB229014930081FF1E /* Extension */,
 				D5556BAA229014420081FF1E /* Resource */,
@@ -119,11 +131,12 @@
 		D5556BB2229014930081FF1E /* MonthCell */ = {
 			isa = PBXGroup;
 			children = (
-				D5556BB3229014930081FF1E /* MonthDataContainer.swift */,
-				D5556BB4229014930081FF1E /* MonthTableCell+UICollectionView.swift */,
-				D5556BB5229014930081FF1E /* MonthTableDelegate.swift */,
 				D5556BB6229014930081FF1E /* MonthTableCell.swift */,
+				D59BD274229215870012457F /* MonthTableCellUI.swift */,
+				D5556BB4229014930081FF1E /* MonthTableCell+UICollectionView.swift */,
 				D5556BB7229014930081FF1E /* MonthTableCellModel.swift */,
+				D5556BB3229014930081FF1E /* MonthDataContainer.swift */,
+				D5556BB5229014930081FF1E /* MonthTableDelegate.swift */,
 			);
 			path = MonthCell;
 			sourceTree = "<group>";
@@ -139,9 +152,9 @@
 		D5556BBA229014930081FF1E /* ComponentCell */ = {
 			isa = PBXGroup;
 			children = (
+				D5556BBD229014930081FF1E /* ComponentCell.swift */,
 				D5556BBB229014930081FF1E /* ComponentDelegate.swift */,
 				D5556BBC229014930081FF1E /* ComponentModel.swift */,
-				D5556BBD229014930081FF1E /* ComponentCell.swift */,
 			);
 			path = ComponentCell;
 			sourceTree = "<group>";
@@ -150,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				D5556BC0229014930081FF1E /* SimpleCalendar.swift */,
+				D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */,
+				D59BD26D22920EC60012457F /* SimpleCalendarUI.swift */,
 				D5556BC1229014930081FF1E /* SimpleCalendarModel.swift */,
 				D5556BC2229014930081FF1E /* SimpleCalendarDelegate.swift */,
 				D5556BBF229014930081FF1E /* CalendarHeaderView.swift */,
@@ -160,7 +175,6 @@
 		D5556BC3229014930081FF1E /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				D5556BC5229014930081FF1E /* Configuration */,
 				D5556BC4229014930081FF1E /* CalendarRatio.swift */,
 				D5556BCA229014930081FF1E /* CalendarColor.swift */,
 			);
@@ -184,8 +198,17 @@
 				D5556BCC229014930081FF1E /* Int+Extension.swift */,
 				D5556BCD229014930081FF1E /* UIView+Extension.swift */,
 				D5556BCE229014930081FF1E /* UIViewController+Extension.swift */,
+				D59BD2762292185E0012457F /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D59BD27122920F2C0012457F /* General */ = {
+			isa = PBXGroup;
+			children = (
+				D59BD26F22920EE50012457F /* AppUIDelegate.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59BD27022920EE50012457F /* AppUIDelegate.swift in Sources */,
 				D5556BD0229014930081FF1E /* MonthTableCell+UICollectionView.swift in Sources */,
 				D5556BD2229014930081FF1E /* MonthTableCell.swift in Sources */,
+				D59BD2732292151D0012457F /* SimpleCalendar+UITableView.swift in Sources */,
+				D59BD2772292185E0012457F /* UIApplication+Extension.swift in Sources */,
 				D5556BD1229014930081FF1E /* MonthTableDelegate.swift in Sources */,
 				D5556BE0229014930081FF1E /* CalendarConfig.swift in Sources */,
 				D5556BDE229014930081FF1E /* CalendarCellConfig.swift in Sources */,
@@ -281,6 +307,8 @@
 				D5556BDB229014930081FF1E /* SimpleCalendarDelegate.swift in Sources */,
 				D5556BDA229014930081FF1E /* SimpleCalendarModel.swift in Sources */,
 				D5556BDD229014930081FF1E /* CalendarHeaderConfig.swift in Sources */,
+				D59BD26E22920EC60012457F /* SimpleCalendarUI.swift in Sources */,
+				D59BD275229215870012457F /* MonthTableCellUI.swift in Sources */,
 				D5556BE4229014930081FF1E /* UIViewController+Extension.swift in Sources */,
 				D5556BD4229014930081FF1E /* CalendarManager.swift in Sources */,
 				D5556BDF229014930081FF1E /* CalendarDateConfig.swift in Sources */,

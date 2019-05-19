@@ -77,12 +77,8 @@ internal class ComponentCell: UICollectionViewCell {
                     backgroundColor = config.passedDatesBackgroundColor
                 }
                 
-                if let attributedText = config.passedDatesAttributedText {
-                    titleLabel.attributedText = attributedText
-                } else {
-                    titleLabel.textColor = config.passedDatesTitleColor
-                    titleLabel.font = config.passedDatesFont
-                }
+                titleLabel.textColor = config.passedDatesTitleColor
+                titleLabel.font = config.passedDatesFont
                 
             } else {
                 let color = (selected) ? config.selectedDayCellBackgroundColor : config.dayCellBackgroundColor
@@ -107,24 +103,15 @@ internal class ComponentCell: UICollectionViewCell {
         switch model.state {
         case .weekday:
             backgroundColor = config.weekdayCellBackgroundColor
-            if let attributedText = config.weekdayAttributedText {
-                titleLabel.attributedText = attributedText
-            } else {
-                titleLabel.textColor = config.weekdayCellTitleColor
-                titleLabel.font = config.weekdayCellTitleFont
-                titleLabel.text = model.weekdaySymbol
-            }
+            titleLabel.textColor = config.weekdayCellTitleColor
+            titleLabel.font = config.weekdayCellTitleFont
+            titleLabel.text = model.weekdaySymbol
             titleLabel.sizeToFit()
             
         case .day:
-            
-            if let attributedText = config.dayAttributedText {
-                titleLabel.attributedText = attributedText
-            } else {
-                titleLabel.textColor = config.dayCellTitleColor
-                titleLabel.font = config.dayCellTitleFont
-                titleLabel.text = (model.day ?? 0).str
-            }
+            titleLabel.textColor = config.dayCellTitleColor
+            titleLabel.font = config.dayCellTitleFont
+            titleLabel.text = (model.day ?? 0).str
             titleLabel.sizeToFit()
             
         case .none:

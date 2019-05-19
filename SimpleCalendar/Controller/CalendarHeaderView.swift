@@ -40,11 +40,7 @@ internal class CalendarHeaderView: UIView {
         fatalError("coder has not been implemented yet")
     }
 
-    internal func set(config: CalendarConfig) {
-        guard let statusBarView = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else {
-            return
-        }
-        statusBarView.backgroundColor = config.barBackgroundColor
+    internal func set(config: CalendarConfig) {        
         backgroundColor = config.barBackgroundColor
         cancelImageView.tintColor = config.barImageTintColor
         
@@ -64,13 +60,9 @@ internal class CalendarHeaderView: UIView {
             cancelImageView.image = image?.withRenderingMode(.alwaysTemplate)
         }
         
-        if let attributedText = config.barAttributedText {
-            titleLabel.attributedText = attributedText
-        } else {
-            titleLabel.textColor = config.barTitleColor
-            titleLabel.font = config.barTitleFont
-            titleLabel.text = config.barTitle
-        }
+        titleLabel.textColor = config.barTitleColor
+        titleLabel.font = config.barTitleFont
+        titleLabel.text = config.barTitle
     }
     
     private func initSubviews() {

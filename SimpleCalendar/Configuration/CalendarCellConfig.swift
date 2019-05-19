@@ -23,8 +23,6 @@ open class CalendarCellConfig {
     
     public var dayCellBackgroundColor: UIColor? = CalendarColor.standard.lightGray
     
-    public var dayAttributedText: NSAttributedString?
-    
     public var selectedDayCellBackgroundColor: UIColor? = CalendarColor.standard.blue
     
     public var selectedCellTitleColor: UIColor? = .white
@@ -36,8 +34,6 @@ open class CalendarCellConfig {
     public var passedDatesTitleColor: UIColor? = CalendarColor.standard.gray
     
     public var passedDatesFont: UIFont = UIFont.systemFont(ofSize:  CalendarRatio.standard.suitable(of: 14), weight: .regular)
-    
-    public var passedDatesAttributedText: NSAttributedString?
     
     /**
      If this property is true, user cannot touch previous dates that
@@ -55,6 +51,4 @@ open class CalendarCellConfig {
     public var weekdayCellTitleFont: UIFont? = UIFont.systemFont(ofSize:  CalendarRatio.standard.suitable(of: 12), weight: .bold)
     
     public var weekdayCellBackgroundColor: UIColor? = .clear
-    
-    public var weekdayAttributedText: NSAttributedString?
 }

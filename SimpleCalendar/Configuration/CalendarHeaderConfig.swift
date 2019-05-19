@@ -16,4 +16,9 @@ open class CalendarHeaderConfig {
     
     public var sectionHeaderBackgrounColor: UIColor = CalendarColor.standard.silver
     
+    internal var sectionHeaderHeight: CGFloat = CalendarRatio.standard.scaled(size: 34, accordingTo: .height)
+    
+    public func setSection(height: CGFloat) {
+        sectionHeaderHeight = CalendarRatio.standard.scaled(size: height, accordingTo: .height)
+    }
 }

@@ -35,6 +35,8 @@ internal class SimpleCalendarModel {
                 })
             })
         }
+        
+        CalendarManager.shared.numberOfSelectedCells = dates.count
     }
     
     internal func configure(with config: CalendarConfig) {

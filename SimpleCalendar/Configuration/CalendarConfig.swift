@@ -18,8 +18,6 @@ open class CalendarConfig {
     
     public var barTitleFont: UIFont = UIFont.systemFont(ofSize: CalendarRatio.standard.suitable(of: 17), weight: .bold)
     
-    public var barAttributedText: NSAttributedString?
-    
     public var barImage: UIImage?
     
     public var barImageTintColor: UIColor =  CalendarColor.standard.softGray
