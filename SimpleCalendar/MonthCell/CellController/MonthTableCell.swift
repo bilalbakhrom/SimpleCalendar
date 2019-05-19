@@ -25,7 +25,8 @@ internal class MonthTableCell: UITableViewCell, MonthTableCellUI {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        initSubviews()
+        setupUI(for: self)
+        configureCollection()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +39,7 @@ internal class MonthTableCell: UITableViewCell, MonthTableCellUI {
         collectionView.reloadData()
     }
     
-    private func initSubviews() {
+    private func configureCollection() {
         collectionView.register(ComponentCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self

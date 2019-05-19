@@ -37,6 +37,7 @@
 		D59BD2732292151D0012457F /* SimpleCalendar+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */; };
 		D59BD275229215870012457F /* MonthTableCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD274229215870012457F /* MonthTableCellUI.swift */; };
 		D59BD2772292185E0012457F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD2762292185E0012457F /* UIApplication+Extension.swift */; };
+		D59BD27922921C650012457F /* ComponentCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59BD27822921C650012457F /* ComponentCellUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimpleCalendar+UITableView.swift"; sourceTree = "<group>"; };
 		D59BD274229215870012457F /* MonthTableCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableCellUI.swift; sourceTree = "<group>"; };
 		D59BD2762292185E0012457F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		D59BD27822921C650012457F /* ComponentCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCellUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				D59BD27122920F2C0012457F /* General */,
-				D5556BBE229014930081FF1E /* Controller */,
-				D5556BB8229014930081FF1E /* Manager */,
+				D5556BBE229014930081FF1E /* SimpleCalendar */,
+				D5556BB8229014930081FF1E /* CalendarManager */,
 				D5556BB2229014930081FF1E /* MonthCell */,
 				D5556BBA229014930081FF1E /* ComponentCell */,
 				D5556BC5229014930081FF1E /* Configuration */,
@@ -131,45 +133,42 @@
 		D5556BB2229014930081FF1E /* MonthCell */ = {
 			isa = PBXGroup;
 			children = (
-				D5556BB6229014930081FF1E /* MonthTableCell.swift */,
-				D59BD274229215870012457F /* MonthTableCellUI.swift */,
-				D5556BB4229014930081FF1E /* MonthTableCell+UICollectionView.swift */,
-				D5556BB7229014930081FF1E /* MonthTableCellModel.swift */,
-				D5556BB3229014930081FF1E /* MonthDataContainer.swift */,
-				D5556BB5229014930081FF1E /* MonthTableDelegate.swift */,
+				D59BD28122921E510012457F /* CellController */,
+				D59BD27E22921E280012457F /* Model */,
+				D59BD28022921E390012457F /* View */,
+				D59BD27F22921E2E0012457F /* Protocol */,
 			);
 			path = MonthCell;
 			sourceTree = "<group>";
 		};
-		D5556BB8229014930081FF1E /* Manager */ = {
+		D5556BB8229014930081FF1E /* CalendarManager */ = {
 			isa = PBXGroup;
 			children = (
 				D5556BB9229014930081FF1E /* CalendarManager.swift */,
 			);
-			path = Manager;
+			path = CalendarManager;
 			sourceTree = "<group>";
 		};
 		D5556BBA229014930081FF1E /* ComponentCell */ = {
 			isa = PBXGroup;
 			children = (
-				D5556BBD229014930081FF1E /* ComponentCell.swift */,
-				D5556BBB229014930081FF1E /* ComponentDelegate.swift */,
-				D5556BBC229014930081FF1E /* ComponentModel.swift */,
+				D59BD28522921E750012457F /* Controller */,
+				D59BD28322921E680012457F /* Model */,
+				D59BD28422921E6F0012457F /* View */,
+				D59BD28222921E610012457F /* Protocol */,
 			);
 			path = ComponentCell;
 			sourceTree = "<group>";
 		};
-		D5556BBE229014930081FF1E /* Controller */ = {
+		D5556BBE229014930081FF1E /* SimpleCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				D5556BC0229014930081FF1E /* SimpleCalendar.swift */,
-				D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */,
-				D59BD26D22920EC60012457F /* SimpleCalendarUI.swift */,
-				D5556BC1229014930081FF1E /* SimpleCalendarModel.swift */,
-				D5556BC2229014930081FF1E /* SimpleCalendarDelegate.swift */,
-				D5556BBF229014930081FF1E /* CalendarHeaderView.swift */,
+				D59BD27D22921DFF0012457F /* Controller */,
+				D59BD27C22921DDF0012457F /* Model */,
+				D59BD27A22921DCD0012457F /* View */,
+				D59BD27B22921DD50012457F /* Protocol */,
 			);
-			path = Controller;
+			path = SimpleCalendar;
 			sourceTree = "<group>";
 		};
 		D5556BC3229014930081FF1E /* Preferences */ = {
@@ -209,6 +208,106 @@
 				D59BD26F22920EE50012457F /* AppUIDelegate.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		D59BD27A22921DCD0012457F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D59BD26D22920EC60012457F /* SimpleCalendarUI.swift */,
+				D5556BBF229014930081FF1E /* CalendarHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D59BD27B22921DD50012457F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BC2229014930081FF1E /* SimpleCalendarDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D59BD27C22921DDF0012457F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BC1229014930081FF1E /* SimpleCalendarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D59BD27D22921DFF0012457F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BC0229014930081FF1E /* SimpleCalendar.swift */,
+				D59BD2722292151D0012457F /* SimpleCalendar+UITableView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D59BD27E22921E280012457F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BB7229014930081FF1E /* MonthTableCellModel.swift */,
+				D5556BB3229014930081FF1E /* MonthDataContainer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D59BD27F22921E2E0012457F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BB5229014930081FF1E /* MonthTableDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D59BD28022921E390012457F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D59BD274229215870012457F /* MonthTableCellUI.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D59BD28122921E510012457F /* CellController */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BB6229014930081FF1E /* MonthTableCell.swift */,
+				D5556BB4229014930081FF1E /* MonthTableCell+UICollectionView.swift */,
+			);
+			path = CellController;
+			sourceTree = "<group>";
+		};
+		D59BD28222921E610012457F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BBB229014930081FF1E /* ComponentDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D59BD28322921E680012457F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BBC229014930081FF1E /* ComponentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D59BD28422921E6F0012457F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D59BD27822921C650012457F /* ComponentCellUI.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D59BD28522921E750012457F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5556BBD229014930081FF1E /* ComponentCell.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +416,7 @@
 				D5556BE1229014930081FF1E /* CalendarColor.swift in Sources */,
 				D5556BD3229014930081FF1E /* MonthTableCellModel.swift in Sources */,
 				D5556BD9229014930081FF1E /* SimpleCalendar.swift in Sources */,
+				D59BD27922921C650012457F /* ComponentCellUI.swift in Sources */,
 				D5556BD5229014930081FF1E /* ComponentDelegate.swift in Sources */,
 				D5556BCF229014930081FF1E /* MonthDataContainer.swift in Sources */,
 			);

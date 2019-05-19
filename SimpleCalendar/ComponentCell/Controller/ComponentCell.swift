@@ -8,24 +8,19 @@
 
 import UIKit
 
-internal class ComponentCell: UICollectionViewCell {
- 
-    private var titleLabel: UILabel!
+internal class ComponentCell: UICollectionViewCell, ComponentCellUI {
+    
+    internal var titleLabel: UILabel!
+    
+    internal var circleView: UIView!
     
     private weak var config: CalendarCellConfig?
     
     private weak var model: ComponentModel?
     
-    private let circleView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        initSubviews()
+        setupUI(for: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,30 +31,6 @@ internal class ComponentCell: UICollectionViewCell {
         self.config = config
         self.model = model
         configure()
-    }
-    
-    private func initSubviews() {
-        titleLabel = UILabel()
-        titleLabel.textAlignment = .center
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(circleView)
-        addSubview(titleLabel)
-        
-        setSubviewConstraints()
-    }
-    
-    private func setSubviewConstraints() {
-        NSLayoutConstraint.activate([
-            circleView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            circleView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            circleView.widthAnchor.constraint(equalToConstant: UI.circularViewSize.width),
-            circleView.heightAnchor.constraint(equalToConstant: UI.circularViewSize.height),
-            
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
-            ])
-        
-        circleView.layer.cornerRadius = UI.circularViewSize.height/2
     }
     
     private func updateCell(selected: Bool) {
@@ -120,12 +91,5 @@ internal class ComponentCell: UICollectionViewCell {
         }
     
         updateCell(selected: model.isSelected)
-    }
-}
-
-fileprivate extension ComponentCell {
-    
-    struct UI {
-        static let circularViewSize = CalendarRatio.standard.scaledSquare(size: 35, accordingTo: .width)
     }
 }
