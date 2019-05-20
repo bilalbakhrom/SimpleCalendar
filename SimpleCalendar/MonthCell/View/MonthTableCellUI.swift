@@ -70,6 +70,6 @@ fileprivate struct UI {
     static var collectionViewHeight: CGFloat {
         let itemSize = getItemSize()
         let collectionHeight = itemSize.height * 7
-        return collectionHeight
+        return collectionHeight + collectionViewBottomSpace
     }
 }

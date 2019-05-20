@@ -34,10 +34,14 @@ extension SimpleCalendar: UITableViewDataSource, UITableViewDelegate {
         return calendarConfig.headerConfig.sectionHeaderHeight
     }
     
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+    }
+    
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let width = UIScreen.main.bounds.width
         let x = CalendarRatio.standard.scaled(size: 16, accordingTo: .width)
-        let h = CalendarRatio.standard.scaled(size: 34, accordingTo: .height)
+        let h = calendarConfig.headerConfig.sectionHeaderHeight
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: h))
         let headerLabel = UILabel(frame: CGRect(x: x, y: 0, width: width - 2*x, height: h))
@@ -48,5 +52,9 @@ extension SimpleCalendar: UITableViewDataSource, UITableViewDelegate {
         headerView.backgroundColor = calendarConfig.headerConfig.sectionHeaderBackgrounColor
         headerView.addSubview(headerLabel)
         return headerView
+    }
+    
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
 }
