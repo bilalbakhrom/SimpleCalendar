@@ -20,6 +20,7 @@ internal class SimpleCalendarModel {
         for element in selectedDatesDictionary {
             all.append(element.value)
         }
+        all = all.sorted { return $0.compare($1) == .orderedDescending }
         return all
     }
     
