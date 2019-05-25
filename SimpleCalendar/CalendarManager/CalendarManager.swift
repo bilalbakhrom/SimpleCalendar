@@ -89,8 +89,7 @@ internal class CalendarManager {
             currentDate = calendar.date(byAdding: .month, value: 1, to: currentDate)!
             all.append(currentDate)
         } while compare(firstObj: currentDate, with: end) != 0
-        
-        all.append(end)
+
         return all
     }
     
